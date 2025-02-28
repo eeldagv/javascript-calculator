@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- normalize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <main class="calculator">
+      <section class="calculator__display">
+        <p class="calculator__expression"></p>
+        <output class="calculator__result"></output>
+      </section>
+      <nav class="calculator__keypad">
+        <section class="calculator__keypad-main">
+          <section class="calculator__control-pad">
+            <button class="calculator__key calculator__key--cancel">
+              &#60;
+            </button>
+            <button class="calculator__key calculator__key--clear">AC</button>
+          </section>
+          <section class="calculator__number-pad">
+            <button class="calculator__key calculator__key--dot">&#46;</button>
+            <button class="calculator__key calculator__key--0">0</button>
+            <button class="calculator__key calculator__key--1">1</button>
+            <button class="calculator__key calculator__key--2">2</button>
+            <button class="calculator__key calculator__key--3">3</button>
+            <button class="calculator__key calculator__key--4">4</button>
+            <button class="calculator__key calculator__key--5">5</button>
+            <button class="calculator__key calculator__key--6">6</button>
+            <button class="calculator__key calculator__key--7">7</button>
+            <button class="calculator__key calculator__key--8">8</button>
+            <button class="calculator__key calculator__key--9">9</button>
+          </section>
+        </section>
+        <section class="calculator__operation-pad">
+          <button class="calculator__key calculator__key--divide">
+            &#247;
+          </button>
+          <button class="calculator__key calculator__key--multiply">
+            &#215;
+          </button>
+          <button class="calculator__key calculator__key--subtract">
+            &#45;
+          </button>
+          <button class="calculator__key calculator__key--add">&#43;</button>
+          <button class="calculator__key calculator__key--equals">&#61;</button>
+        </section>
+      </nav>
+    </main>
+  </body>
+</html>
