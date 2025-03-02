@@ -2,6 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 body {
   min-height: 100vh;
@@ -12,147 +16,132 @@ button {
   cursor: pointer;
 }
 
-/* iPhone 16 Pro Max */
-@media (min-width: 430px) and (max-width: 2796px) {
-  .calculator {
-    width: 412px;
-    height: 784px;
-    margin: auto auto;
-  }
+.calculator {
+  width: 412px;
+  height: 784px;
+  margin: auto auto;
+}
 
-  .calculator__display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: end;
-    height: 184px;
-    padding-right: 18px;
-    border-radius: 24px 24px 0px 0px;
-    border: 1px 1px 0 1px solid #8e8e8e;
-    background-color: #413c3c;
-  }
-  .calculator__expression {
-    width: 290px;
-    height: 80px;
-    color: #fff;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: end;
-  }
-  .calculator__result {
-    width: 117px;
-    color: #fff;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: end;
-  }
+.calculator__display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  height: 184px;
+  padding-right: 18px;
+  border-radius: 24px 24px 0px 0px;
+  border: 1px 1px 0 1px solid #8e8e8e;
+  background-color: #413c3c;
+}
+.calculator__formula {
+  width: 290px;
+  height: 80px;
+  color: #fff;
+  font-size: 30px;
+  text-align: end;
+}
+.calculator__display-main {
+  overflow: hidden;
+  color: #fff;
+  font-size: 50px;
+  text-align: end;
+}
 
-  .calculator__key {
-    height: 120px;
-  }
-  .calculator__keypad {
-    display: flex;
-    width: 100%;
-    border: 1px solid #8e8e8e;
-    border-radius: 0px 0px 24px 24px;
-    background-color: #e0e0e0;
-  }
+.calculator__key {
+  height: 120px;
+}
+.calculator__keypad {
+  display: flex;
+  width: 100%;
+  border: 1px solid #8e8e8e;
+  border-radius: 0px 0px 24px 24px;
+  background-color: #e0e0e0;
+}
 
-  .calculator__keypad-main {
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    color: #000;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  .calculator__control-pad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .calculator__control-pad .calculator__key {
-    border-bottom: 1px solid #8e8e8e;
-    border-right: 1px solid #8e8e8e;
-  }
-  .calculator__key--clear {
-    grid-column: span 2;
-  }
-  .calculator__number-pad {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "key7 key8 key9"
-      "key4 key5 key6"
-      "key1 key2 key3"
-      "key0 key0 key-dot";
-  }
-  .calculator__number-pad .calculator__key {
-    border-bottom: 1px solid #8e8e8e;
-    border-right: 1px solid #8e8e8e;
-  }
-  .calculator__number-pad .calculator__key:first-child,
-  .calculator__number-pad .calculator__key:nth-child(2) {
-    border-bottom: none;
-  }
+.calculator__keypad-main {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  color: #000;
+  font-size: 50px;
+}
+.calculator__control-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.calculator__control-pad .calculator__key {
+  border-bottom: 1px solid #8e8e8e;
+  border-right: 1px solid #8e8e8e;
+}
+.calculator__key--clear {
+  grid-column: span 2;
+}
+.calculator__number-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "key7 key8 key9"
+    "key4 key5 key6"
+    "key1 key2 key3"
+    "key0 key0 key-dot";
+}
+.calculator__number-pad .calculator__key {
+  border-bottom: 1px solid #8e8e8e;
+  border-right: 1px solid #8e8e8e;
+}
+.calculator__number-pad .calculator__key:first-child,
+.calculator__number-pad .calculator__key:nth-child(2) {
+  border-bottom: none;
+}
 
-  /* 공통된 grid-area를 별도로 묶어두기 */
-  .calculator__key--7 {
-    grid-area: key7;
-  }
-  .calculator__key--8 {
-    grid-area: key8;
-  }
-  .calculator__key--9 {
-    grid-area: key9;
-  }
-  .calculator__key--4 {
-    grid-area: key4;
-  }
-  .calculator__key--5 {
-    grid-area: key5;
-  }
-  .calculator__key--6 {
-    grid-area: key6;
-  }
-  .calculator__key--1 {
-    grid-area: key1;
-  }
-  .calculator__key--2 {
-    grid-area: key2;
-  }
-  .calculator__key--3 {
-    grid-area: key3;
-  }
-  .calculator__key--0 {
-    grid-area: key0;
-    grid-column: span 2;
-  }
-  .calculator__key--dot {
-    grid-area: key-dot;
-  }
+/* 공통된 grid-area를 별도로 묶어두기 */
+.calculator__key--7 {
+  grid-area: key7;
+}
+.calculator__key--8 {
+  grid-area: key8;
+}
+.calculator__key--9 {
+  grid-area: key9;
+}
+.calculator__key--4 {
+  grid-area: key4;
+}
+.calculator__key--5 {
+  grid-area: key5;
+}
+.calculator__key--6 {
+  grid-area: key6;
+}
+.calculator__key--1 {
+  grid-area: key1;
+}
+.calculator__key--2 {
+  grid-area: key2;
+}
+.calculator__key--3 {
+  grid-area: key3;
+}
+.calculator__key--0 {
+  grid-area: key0;
+  grid-column: span 2;
+}
+.calculator__key--dot {
+  grid-area: key-dot;
+}
 
-  .calculator__operation-pad {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    background-color: #e89650;
-    border-radius: 0 0 24px 0;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  .calculator__operation-pad .calculator__key {
-    border-bottom: 1px solid #8e8e8e;
-    color: #fff;
-  }
-  .calculator__operation-pad .calculator__key:last-child {
-    border-bottom: none;
-  }
+.calculator__operation-pad {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 25%;
+  background-color: #e89650;
+  border-radius: 0 0 24px 0;
+  font-size: 50px;
+}
+.calculator__operation-pad .calculator__key {
+  border-bottom: 1px solid #8e8e8e;
+  color: #fff;
+}
+.calculator__operation-pad .calculator__key:first-child {
+  border-bottom: none;
 }

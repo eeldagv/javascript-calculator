@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
+
     <!-- normalize.css-->
     <link
       rel="stylesheet"
@@ -12,14 +13,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style.css" />
-    <script src="./app.js"></script>
   </head>
   <body>
     <main class="calculator">
       <section class="calculator__display">
-        <p class="calculator__expression"></p>
-        <output class="calculator__result"></output>
+        <p class="calculator__formula"></p>
+        <p class="calculator__display-main"></p>
       </section>
       <nav class="calculator__keypad">
         <section class="calculator__keypad-main">
@@ -44,19 +52,40 @@
           </section>
         </section>
         <section class="calculator__operation-pad">
-          <button class="calculator__key calculator__key--divide">
-            &#247;
+          <button
+            class="calculator__key calculator__key--equals"
+            aria-label="Equal sign"
+          >
+            &#61;
           </button>
-          <button class="calculator__key calculator__key--multiply">
-            &#215;
+          <button
+            class="calculator__key calculator__key--add"
+            aria-label="Plus sign"
+          >
+            &#43;
           </button>
-          <button class="calculator__key calculator__key--subtract">
+          <button
+            class="calculator__key calculator__key--subtract"
+            aria-label="Subtraction sign"
+          >
             &#45;
           </button>
-          <button class="calculator__key calculator__key--add">&#43;</button>
-          <button class="calculator__key calculator__key--equals">&#61;</button>
+          <button
+            class="calculator__key calculator__key--multiply"
+            aria-label="Multiplication sign"
+          >
+            &#215;
+          </button>
+          <button
+            class="calculator__key calculator__key--divide"
+            aria-label="Division sign"
+          >
+            &#247;
+          </button>
         </section>
       </nav>
     </main>
+
+    <script src="./app.js" type="module"></script>
   </body>
 </html>
