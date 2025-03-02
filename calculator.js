@@ -1,40 +1,17 @@
-const keypad = document.querySelector(".calculator__keypad");
-const display = document.querySelector(".calculator__display-main");
-const formula = document.querySelector(".calculator__formula");
+const DECIMAL_PLACES = 8;
+const DELETE_COUNT = 3;
 
-let currentInput = [];
-const OPERATORS = ["+", "-", "×", "÷"];
-
-function convertKeyToOperator(key) {
+export function convertKeyToOperator(key) {
   const operatorMapping = {
     "*": "×",
     "/": "÷",
-  }
+  };
   return operatorMapping[key] || key;
 }
 
-function handleInputKey(event) {
-  const enteredKey = event.key || event.target.textContent.trim();
-  const key = convertKeyToOperator(enteredKey);
+export function calculate(display, formula) {
+  console.log("formula:", formula);
 
-  if (/\d/.test(key) || OPERATORS.includes(key)) {
-    currentInput.push(key);
-  } else if (key === "Backspace" || key === "<") {
-    currentInput.pop();
-  } else if (key === "AC") {
-    currentInput = [];
-    formula.textContent = "";
-  } else if (key === "Enter" || key === "=") {
-    calculate();
-    currentInput = [display.textContent];
-  }
-
-  display.textContent = currentInput.join("");
-}
-keypad.addEventListener("click", handleInputKey);
-document.addEventListener("keydown", handleInputKey);
-
-function calculate() {
   if (display.textContent === "") return;
 
   formula.textContent = display.textContent;
@@ -48,10 +25,7 @@ function calculate() {
   display.textContent = finalValue;
 }
 
-const DECIMAL_PLACES = 8;
-const DELETE_COUNT = 3;
-
-function processMulDiv(expression) {
+export function processMulDiv(expression) {
   let result;
   for (let i = 0; i < expression.length; i++) {
     if (expression[i] === "×" || expression[i] === "÷") {
@@ -74,7 +48,7 @@ function processMulDiv(expression) {
   return expression;
 }
 
-function processAddSub(expression) {
+export function processAddSub(expression) {
   let result;
   for (let i = 0; i < expression.length; i++) {
     if (expression[i] === "+" || expression[i] === "-") {
