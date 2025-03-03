@@ -7,7 +7,7 @@ export function handleInputKey(event, currentInput, display, formula) {
 
   const OPERATORS = ["+", "-", "×", "÷"];
 
-  if (/\d/.test(key) || OPERATORS.includes(key)) {
+  if (/\d|\./.test(key) || OPERATORS.includes(key)) {
     currentInput.push(key);
     console.log(currentInput);
   } else if (key === "Backspace" || key === "<") {
