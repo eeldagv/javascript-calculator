@@ -1,6 +1,3 @@
-const DECIMAL_PLACES = 8;
-const DELETE_COUNT = 3;
-
 export function convertKeyToOperator(key) {
   const operatorMapping = {
     "*": "×",
@@ -10,8 +7,6 @@ export function convertKeyToOperator(key) {
 }
 
 export function calculate(display, formula) {
-  console.log("formula:", formula);
-
   if (display.textContent === "") return;
 
   formula.textContent = display.textContent;
@@ -24,6 +19,9 @@ export function calculate(display, formula) {
 
   display.textContent = finalValue;
 }
+
+const DECIMAL_PLACES = 8;
+const DELETE_COUNT = 3;
 
 export function processMulDiv(expression) {
   let result;
