@@ -9,7 +9,6 @@ export function handleInputKey(event, currentInput, display, formula) {
 
   if (/\d|\./.test(key) || OPERATORS.includes(key)) {
     currentInput.push(key);
-    console.log(currentInput);
   } else if (key === "Backspace" || key === "<") {
     currentInput.pop();
   } else if (key === "AC") {
