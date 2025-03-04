@@ -1,11 +1,10 @@
 import { calculate } from "./calculator.js";
 import { convertKeyToOperator } from "./calculator.js";
+import { OPERATORS } from "./constants.js";
 
 export function handleInputKey(event, currentInput, display, formula) {
   const enteredKey = event.key || event.target.textContent.trim();
   const key = convertKeyToOperator(enteredKey);
-
-  const OPERATORS = ["+", "-", "×", "÷"];
 
   if (/\d|\./.test(key) || OPERATORS.includes(key)) {
     currentInput.push(key);
